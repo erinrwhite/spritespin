@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;  charset=iso-8859-1" />
+  <meta name="description" content="An minimal site format" />
+  <meta name="keywords" content="blog" />
+ <link rel="stylesheet" type="text/css" href="style.css" media="all" />  
+<title>minimal</title>
+</head>
+
+<body>
+  <a href="http://github.com/giniedp/spritespin">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
+  </a>
+  
+  <div id="container">
+    <div id="header">
+      <h1>
+        <a href="http://github.com/giniedp/spritespin">sprite<span>spin</span></a>
+        <span class="small">by <a href="http://github.com/giniedp">giniedp</a></span>
+      </h1>
+    </div>
+
+    <div id="wrapper">
+      <div id="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="howto.html">Howto</a></li>
+          <li class="current_page_item"><a href="api.html">Api</a></li>
+          <li><a href="examples.html">Examples</a></li>
+        </ul>
+      </div>
+        
+      <div id="content-wrapper">
+        <div id="content">
+    
+          <h3 class="post-title"><a href="#">Options</a></h3>
+          <p>
+            <table>
+              <tr>
+                <th>Option</th>
+                <th>Description</th>
+                <th>Default</th>
+              </tr>                                                                                             
+              <tr><td>width            </td><td> The width of a single frame.                                             </td><td> 640                         </td></tr>
+              <tr><td>height           </td><td> The height of a single frame.                                            </td><td> 480                         </td></tr>
+              <tr><td>frames           </td><td> Total number of frames.                                                  </td><td> 36                          </td></tr>
+              <tr><td>frame            </td><td> Initial frame number.                                                    </td><td> 0                           </td></tr>
+              <tr><td>animate          </td><td> If true, starts the animation after initialize.                          </td><td> false                       </td></tr>
+              <tr><td>loop             </td><td> If true, always repeats the animation.                                   </td><td>                              </td></tr>
+              <tr><td>speed            </td><td> Time in miliseconds between updates.                                     </td><td> 32 (8 Frames per second)    </td></tr>
+              <tr><td>reverse          </td><td> If true, plays the animation backward.                                   </td><td> false                       </td></tr>
+              <tr><td>image            </td><td> Path to the sprite image.                                                </td><td> "images/spritespin.jpg"      </td></tr>
+              <tr><td>onFrameChanged   </td><td> Event that is called when the framenumber has changed.                   </td><td> undefined                   </td></tr>
+              <tr><td>slider           </td><td> Instance of a jQuery-ui Slider.                                          </td><td> undefined                   </td></tr>
+              <tr><td>interactive      </td><td> If true, enables mouse interaction. This allows to "drag" the animation. </td><td> true                        </td></tr>
+            </table>
+          </p>
+          
+          <h3 class="post-title"><a href="#">Methods</a></h3>
+          <p>
+            Api description is coming soon
+          </p>
+
+        </div>
+      </div>
+      
+      <div id="sidebar-wrapper">
+        <div id="sidebar">
+          <h3>Download</h3>
+          <a href="http://github.com/giniedp/spritespin/zipball/master" class="download_link zip"></a>
+          <a href="http://github.com/giniedp/spritespin/zipball/master" class="download_link tar"></a>
+          <a href='http://pledgie.com/campaigns/13569'><img alt='Click here to lend your support to: spritespin and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/13569.png?skin_name=chrome' border='0' /></a>
+        </div>
+      </div>
+      
+      <div id="footer">
+      </div>
+    </div>
+  </div>
+</body>
