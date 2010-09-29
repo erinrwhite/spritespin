@@ -76,35 +76,84 @@ cite
 	font-family: Consolas, Verdana, Serif;
 }
 
+a.pledgie:hover{
+  background-color: transparent;
+}
 a.download_link{
   display :block;
-  border : 1px solid black;
-  background-color: #ccc;
-  color : #666;
-  padding: 10px;
+  height : 140px;
+  border : 1px solid #cecece;
   -moz-border-radius: 5px;
+  padding: 0px;
+	margin: 0 0 10px 0;
+	
+  background-image: url("./images/gradient120.png");
+	
 	font-size: 13px; 
 	text-transform: uppercase; 
 	font-weight: bold; 
-	margin: 0 0 10px 0;
+	color : #666;
+	
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cecece', endColorstr='#F3F2F2'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#cecece), to(#F3F2F2)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #cecece,  #F3F2F2); /* for firefox 3.6+ */
 }
 a.download_link:hover {
-  background-color: #343838;
+  background-image: url("./images/gradient120.png");
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F3F2F2', endColorstr='#cecece'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#F3F2F2), to(#cecece)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #F3F2F2,  #cecece); /* for firefox 3.6+ */
 }
-a.zip {
+.zip {
   background-image: url("http://github.com/images/modules/download/zip.png");
-	height : 120px;
+  height:140px;
 }
-a.tar {
+.tar {
   background-image: url("http://github.com/images/modules/download/tar.png");
-	height : 120px;
+  height:140px;
 }
-
+.dark-gradient{
+  background-image: url("./images/gradient35.png");
+  
+  /*
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cecece', endColorstr='#F3F2F2');
+  background: -webkit-gradient(linear, left top, left bottom, from(#cecece), to(#F3F2F2));
+  background: -moz-linear-gradient(top,  #cecece,  #F3F2F2);
+  */
+}
+.rt{
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.rtl{
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  border-top-left-radius: 3px;
+}
+.rtr{
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-right-radius: 3px;
+}
+.rb{
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
 table {
   border: 1px solid #F3F2F2;
+  border-collapse:collapse;
 }
 
 table th {
+  border-collapse:collapse;
 	background-color: #282d2d;
 	text-transform: uppercase;
   color: #C6C6C6;
@@ -112,11 +161,12 @@ table th {
 }
 
 table tr:nth-child(even) {
+  border-collapse:collapse;
   background: #F3F2F2;
 }
 
 table tr td {
-  border: 1px solid #F3F2F2;
+  border-collapse:collapse;
   padding: 5px;
 }
 
@@ -150,10 +200,11 @@ table tr td {
 	clear: both;
 	float: left;
 	width: 800px;
-        background: #ffffff;
-        border-left: solid #dde0e1 2px;
-        border-right: solid #dde0e1 2px;
-        border-bottom: solid #dde0e1 2px;
+  background: #ffffff;
+  border-left: solid #dde0e1 2px;
+  border-right: solid #dde0e1 2px;
+  border-bottom: solid #dde0e1 2px;
+  margin: 0 0 50px 0;
 }
 
 #content-wrapper
@@ -223,11 +274,9 @@ table tr td {
 	clear: both;
 	float: left;
 	width: 800px;
-	margin: 0px 0;
 	color: #555555;
 	text-align: center;
-	padding: 10px 0;
-	background: #cfcfcf;
+	min-height: 35px;
 }
 
 /* Navigation */
@@ -250,9 +299,11 @@ table tr td {
 	display: block;
 	color: #c6c6c6;
 	padding: 5px 10px;
-
 }
-
+#navigation ul li a:hover{
+	background-color: #414646;
+	color: #ffffff;
+}
 #navigation ul li.current_page_item   a:link,
 #navigation ul li.current_page_item   a:visited,
 #navigation ul li.current_page_item   a:hover,
@@ -261,7 +312,7 @@ table tr td {
 	color: #ffffff;
 	background-color: #414646;
 	border-left: solid #6b7070 1px;
-        border-right: solid #6b7070 1px;
+  border-right: solid #6b7070 1px;
 }
 
 #navigation ul li.search
@@ -305,10 +356,6 @@ table tr td {
 	text-transform: lowercase;
 	display: inline;
 	}
-
-h3.post-title {
-        display: inline;
-        }
 
 h3.post-title a {	
         text-transform: lowercase;

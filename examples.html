@@ -5,7 +5,13 @@
   <meta http-equiv="Content-Type" content="text/html;  charset=iso-8859-1" />
   <meta name="description" content="An minimal site format" />
   <meta name="keywords" content="blog" />
- <link rel="stylesheet" type="text/css" href="style.css" media="all" />  
+  <link rel="stylesheet" type="text/css" href="style.css" media="all" />  
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load("jquery", "1.4.2");
+    google.load("jqueryui", "1.8.4");
+  </script>
+  <script type="text/javascript" src="http://github.com/giniedp/spritespin/raw/master/src/jquery.spritespin.js" ></script>
 <title>minimal</title>
 </head>
 
@@ -22,8 +28,8 @@
       </h1>
     </div>
 
-    <div id="wrapper">
-      <div id="navigation">
+    <div id="wrapper" class="rb">
+      <div id="navigation" class="dark-gradient rt">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="howto.html">Howto</a></li>
@@ -40,19 +46,118 @@
            Examples are coming soon.
           </p>
           
+          <h3 class="post-title"><a href="#">Demo 3</a></h3>
+          <p class="demo">
+            <p>
+              Spritespin can show 360 panorama shots
+            </p>
+            <div id="demo-3"></div>
+            <script>
+            $(function(){
+              $("#demo-3").spritespin({
+                width  : 260,
+                height : 260,
+                frames : 10,
+                frame  : 0,
+                animate: true,
+                loop   : true,
+                speed  : 120,
+                image  : "sprites/demo-3/mountain.jpg",
+                behavior : "interactive"
+              }).bind("dblclick", function(){
+                $(this).spritespin("animate", "toggle");
+              });
+            });
+            </script>
+          </p>
+          
+          <h3 class="post-title"><a href="#">Demo 4</a></h3>
+          <p class="demo">
+            <p>
+              Here spritespin is used to create a simple image viewer.
+              Pictures are taken from <a href="http://www.freedigitalphotos.net">freedigitalphotos.net</a>
+            </p>
+            
+            <div id="demo-4"></div>
+            <button id="demo-4-prev">Prev</button>
+            <button id="demo-4-toggle">Toggle Slideshow</button>
+            <button id="demo-4-next">Next</button>
+           
+           <script>
+           $(function(){
+             $("#demo-4").spritespin({
+               width  : 400,
+               height : 264,
+               frames : 6,
+               frame  : 0,
+               animate: true,
+               speed  : 1000,
+               image  : [
+                "sprites/demo-4/0.jpg",
+                "sprites/demo-4/1.jpg",
+                "sprites/demo-4/2.jpg",
+                "sprites/demo-4/3.jpg",
+                "sprites/demo-4/4.jpg",
+                "sprites/demo-4/5.jpg",
+               ],
+               behavior : "none"
+             });
+             $("#demo-4-next").button().click(function(){
+               var frame = $("#demo-4").spritespin("frame");
+               $("#demo-4").spritespin("frame", frame + 1);
+             });
+             $("#demo-4-prev").button().click(function(){
+               var frame = $("#demo-4").spritespin("frame");
+               $("#demo-4").spritespin("frame", frame - 1);
+             });
+             $("#demo-4-toggle").button().click(function(){
+               var loop = true;
+               $("#demo-4").spritespin("animate", "toggle", loop);
+             });
+           });
+           </script>
+           
+<pre class="box">
+&lt;div id="demo-4"&gt;&lt;/div&gt;
+&lt;script"&gt;
+$(function(){
+  $("#demo-4").spritespin({
+    width  : 400,
+    height : 264,
+    frames : 6,
+    animate: false,
+    image  : [
+     "sprites/demo-4/0.jpg",
+     "sprites/demo-4/1.jpg",
+     "sprites/demo-4/2.jpg",
+     "sprites/demo-4/3.jpg",
+     "sprites/demo-4/4.jpg",
+     "sprites/demo-4/5.jpg",
+    ],
+    behavior : "none"
+  }).bind("click", function(){
+    $(this).spritespin("update");
+  });
+});
+&lt;/div&gt;
+</pre>
+          
         </div>
       </div>
       
-      <div id="sidebar-wrapper">
+      <div id="sidebar-wrapper" class="rt rb">
         <div id="sidebar">
           <h3>Download</h3>
-          <a href="http://github.com/giniedp/spritespin/zipball/master" class="download_link zip"></a>
-          <a href="http://github.com/giniedp/spritespin/zipball/master" class="download_link tar"></a>
-          <a href='http://pledgie.com/campaigns/13569'><img alt='Click here to lend your support to: spritespin and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/13569.png?skin_name=chrome' border='0' /></a>
+          <a href="http://github.com/giniedp/spritespin/zipball/master" class="download_link"><div class="zip"></div></a>
+          <a href="http://github.com/giniedp/spritespin/tarball/master" class="download_link"><div class="tar"></div></a>
+          <a href='http://pledgie.com/campaigns/13569' class="pledgie">
+            <img alt='Click here to lend your support to: spritespin and make a donation at www.pledgie.com !' 
+                 src='http://www.pledgie.com/campaigns/13569.png?skin_name=chrome' border='0' />
+          </a>
         </div>
       </div>
       
-      <div id="footer">
+      <div id="footer" class="rb dark-gradient">
       </div>
     </div>
   </div>
