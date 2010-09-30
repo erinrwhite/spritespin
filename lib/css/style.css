@@ -121,6 +121,14 @@ a.download_link:hover {
   background: -moz-linear-gradient(top,  #cecece,  #F3F2F2);
   */
 }
+.category-head{
+  text-align:left;
+  font-style: italic;
+  font-weight: bold;
+}
+.demo{
+  margin:10px 20px;
+}
 .rt{
   -webkit-border-top-left-radius: 3px;
   -webkit-border-top-right-radius: 3px;
@@ -160,7 +168,7 @@ table th {
   padding: 5px;
 }
 
-table tr:nth-child(even) {
+table tr:nth-child(odd) {
   border-collapse:collapse;
   background: #F3F2F2;
 }
@@ -175,7 +183,7 @@ table tr td {
 
 #container
 {
-	width: 800px;
+	width: 960px;
 	margin: 0 auto;
 }
 
@@ -187,7 +195,7 @@ table tr td {
 #navigation
 {
 	float: left; 
-	width: 800px;
+	width: 960px;
 	background-color: #282d2d;
 	text-transform: uppercase;
   font-size: 14px;
@@ -199,7 +207,7 @@ table tr td {
 	padding: 0;
 	clear: both;
 	float: left;
-	width: 800px;
+	width: 960px;
   background: #ffffff;
   border-left: solid #dde0e1 2px;
   border-right: solid #dde0e1 2px;
@@ -273,7 +281,7 @@ table tr td {
 {
 	clear: both;
 	float: left;
-	width: 800px;
+	width: 960px;
 	color: #555555;
 	text-align: center;
 	min-height: 35px;
@@ -285,7 +293,7 @@ table tr td {
 {
 	margin: 0 5px;
 	float: left;
-	width: 800px;
+	width: 960px;
 	padding: 0px 0;
 	list-style-type: none;
 }

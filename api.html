@@ -40,27 +40,89 @@
             <table>
               <tr>
                 <th class="dark-gradient">Option</th>
-                <th class="dark-gradient">Description</th>
                 <th class="dark-gradient">Default</th>
-              </tr>                                                                                             
-              <tr><td>width            </td><td> The width of a single frame.                                             </td><td> 640                         </td></tr>
-              <tr><td>height           </td><td> The height of a single frame.                                            </td><td> 480                         </td></tr>
-              <tr><td>frames           </td><td> Total number of frames.                                                  </td><td> 36                          </td></tr>
-              <tr><td>frame            </td><td> Initial frame number.                                                    </td><td> 0                           </td></tr>
-              <tr><td>animate          </td><td> If true, starts the animation after initialize.                          </td><td> false                       </td></tr>
-              <tr><td>loop             </td><td> If true, always repeats the animation.                                   </td><td>                              </td></tr>
-              <tr><td>speed            </td><td> Time in miliseconds between updates.                                     </td><td> 32 (8 Frames per second)    </td></tr>
-              <tr><td>reverse          </td><td> If true, plays the animation backward.                                   </td><td> false                       </td></tr>
-              <tr><td>image            </td><td> Path to the sprite image.                                                </td><td> "images/spritespin.jpg"      </td></tr>
-              <tr><td>onFrameChanged   </td><td> Event that is called when the framenumber has changed.                   </td><td> undefined                   </td></tr>
-              <tr><td>slider           </td><td> Instance of a jQuery-ui Slider.                                          </td><td> undefined                   </td></tr>
-              <tr><td>interactive      </td><td> If true, enables mouse interaction. This allows to "drag" the animation. </td><td> true                        </td></tr>
+                <th class="dark-gradient">Description</th>
+              </tr>   
+
+        <tr class="category-head"><td colspan="3">Dimensions</td></tr>
+        <tr><td>offsetX           </td><td> 0                      </td><td> X offset where the frame image starts            </td></tr>
+        <tr><td>offsetY           </td><td> 0                      </td><td> Y offset where the frame image starts            </td></tr>
+        <tr><td>width             </td><td> undefined              </td><td> Window width (or frame width)                    </td></tr>
+        <tr><td>height            </td><td> undefined              </td><td> Window height (or frame height)                  </td></tr>
+        <tr><td>frameStep         </td><td> undefined              </td><td> Width of a single frame or step to the next frame</td></tr>
+        <tr><td>frames            </td><td> 36                     </td><td> Total number of frames                           </td></tr>
+        <tr><td>frame             </td><td> 0                      </td><td> Initial frame number                             </td></tr>
+        
+        <tr class="category-head"><td colspan="3">Animation</td></tr>
+        <tr><td>animate           </td><td> false                  </td><td> Run animation on startup                         </td></tr>
+        <tr><td>loop              </td><td> false                  </td><td> Repeat animation in a loop                       </td></tr>
+        <tr><td>loopFrame         </td><td> 0                      </td><td> Indicates the loop frame. Animation will stop here when loop is false</td></tr>
+        <tr><td>speed             </td><td> 36                     </td><td> Time between updates                             </td></tr>
+        <tr><td>reverse           </td><td> false                  </td><td> If true animation is played backward             </td></tr>
+        
+        <tr class="category-head"><td colspan="3">Interaction</td></tr>
+        <tr><td>slider            </td><td> undefined              </td><td> jQuery-ui slider instance                        </td></tr>
+        <tr><td>behavior          </td><td> "interactive"          </td><td> Enables mouse interaction                        </td></tr>
+        
+        <tr class="category-head"><td colspan="3" >Appearance</td></tr>
+        <tr><td>image             </td><td> "images/spritespin.jpg"</td><td> Stiched source image                             </td></tr>
+        <tr><td>preloadText       </td><td> "Loading"              </td><td> Text to appear when images are preloaded         </td></tr>
+        <tr><td>preloadBackground </td><td> undefined              </td><td> Image to appear when images are preloaded         </td></tr>
+        
+        <tr class="category-head"><td colspan="3">Events</td></tr>
+        <tr><td>onFrameChange     </td><td> undefined              </td><td> Occurs on every update </td></tr>
+        <tr><td>onLoad            </td><td> undefined               </td><td> Occurs after images are loaded and spritespin has initialized</td></tr>
             </table>
           </p>
           
           <h3 class="post-title"><a href="#">Methods</a></h3>
+          
           <p>
-            Api description is coming soon
+            <table>
+              <tr>
+                <th class="dark-gradient">Animate</th>
+              </tr> 
+              <tr>
+                <td>
+                  <pre class="box">.spritespin("animate")</pre>
+                  Gets a value indicationg whether the animation is running or not.
+                  <pre class="box">.spritespin("animate", true)</pre>
+                  Starts the animation if not already running.
+                  <pre class="box">.spritespin("animate", stop)</pre>
+                  Stops the animation if not already running.
+                  <pre class="box">.spritespin("animate", "toggle")</pre>
+                  Toggles the animation
+                  <pre class="box">.spritespin("animate", true, true)</pre>
+                  Starts the animation if not already running and keeps it looping.
+                  <pre class="box">.spritespin("animate", true, false)</pre>
+                  Starts the animation if not already running and plays it only once.
+                </td>
+              </tr>
+              <tr>
+                <th class="dark-gradient">Loop</th>
+              </tr> 
+              <tr>
+                <td>
+                  <pre class="box">.spritespin("loop")</pre>
+                  Gets a value indication whether the animation is looped.
+                  <pre class="box">.spritespin("loop", true)</pre>
+                  Sets the loop setting to true. If animation setting is also true, the animation will be started.
+                  <pre class="box">.spritespin("loop", false)</pre>
+                  Sets the loop setting to false. Current animation will be stopped at the end.
+                </td>
+              </tr>
+              <tr>
+                <th class="dark-gradient">Frame</th>
+              </tr> 
+              <tr>
+                <td>
+                  <pre class="box">.spritespin("frame")</pre>
+                  Gets the current framenumber
+                  <pre class="box">.spritespin("frame", <value>)</pre>
+                  Updates the current framenumber to the specified value.
+                </td>
+              </tr>
+            </table>
           </p>
 
         </div>
