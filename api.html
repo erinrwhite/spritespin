@@ -56,12 +56,13 @@
         <tr><td>animate           </td><td> false                  </td><td> Run animation on startup                         </td></tr>
         <tr><td>loop              </td><td> false                  </td><td> Repeat animation in a loop                       </td></tr>
         <tr><td>loopFrame         </td><td> 0                      </td><td> Indicates the loop frame. Animation will stop here when loop is false</td></tr>
-        <tr><td>speed             </td><td> 36                     </td><td> Time between updates                             </td></tr>
+        <tr><td>frameTime             </td><td> 36                 </td><td> Time between updates                             </td></tr>
         <tr><td>reverse           </td><td> false                  </td><td> If true animation is played backward             </td></tr>
+        <tr><td>sense             </td><td> 1                      </td><td> Sensitivity value. Used by behavior implementation e.g. for touch sensitivity. Must be greater than  zero. </td></tr>
         
         <tr class="category-head"><td colspan="3">Interaction</td></tr>
         <tr><td>slider            </td><td> undefined              </td><td> jQuery-ui slider instance                        </td></tr>
-        <tr><td>behavior          </td><td> "interactive"          </td><td> Enables mouse interaction                        </td></tr>
+        <tr><td>behavior          </td><td> "drag"                 </td><td> Behavior implementation (mouseinteraction) to use. </td></tr>
         
         <tr class="category-head"><td colspan="3" >Appearance</td></tr>
         <tr><td>image             </td><td> "images/spritespin.jpg"</td><td> Stiched source image                             </td></tr>
@@ -69,7 +70,7 @@
         <tr><td>preloadBackground </td><td> undefined              </td><td> Image to appear when images are preloaded         </td></tr>
         
         <tr class="category-head"><td colspan="3">Events</td></tr>
-        <tr><td>onFrameChange     </td><td> undefined              </td><td> Occurs on every update </td></tr>
+        <tr><td>onFrame           </td><td> undefined              </td><td> Occurs on every update </td></tr>
         <tr><td>onLoad            </td><td> undefined               </td><td> Occurs after images are loaded and spritespin has initialized</td></tr>
             </table>
           </p>

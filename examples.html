@@ -55,6 +55,83 @@
       <div id="content-wrapper">
         <div id="content">
 
+<h3 class="post-title"><a href="#">Demo 1</a></h3>
+<p>
+  Basic functionality using default options. Drag the bike to rotate.
+</p>   
+<div id="demo-1" class="demo">
+  <div class="demo-1"></div>
+  <script>
+  $(function(){
+    $(".demo-1").spritespin({
+      width     : 640,
+      height    : 437,
+      frames    : 34,
+      image     : "sprites/demo-1/bike.jpg",
+    });
+  });
+  </script>
+</div>   
+<script>copySource(1);</script>
+
+<h3 class="post-title"><a href="#">Demo 2</a></h3>
+<p>
+  This is using an array with 34 images instead of a sprite sheet. A Slider is attached too.
+</p>   
+<div id="demo-2" class="demo">
+  <div class="demo-2 ui-widget-header ui-corner-top"></div>
+  <div id="#toolbar-2" class="ui-widget-header ui-corner-bottom" style="width:464px;text-align:center;padding:8px;">
+    <div class="demo-2-slider"></div>
+  </div>
+  
+  <script>
+  $(function(){
+    $(".demo-2").spritespin({
+      width     : 480,
+      height    : 327,
+      frames    : 34,
+      slider    : $(".demo-2-slider").slider({}),
+      image     : [
+        "sprites/demo-2/rad_zoom_001.jpg",
+        "sprites/demo-2/rad_zoom_002.jpg",
+        "sprites/demo-2/rad_zoom_003.jpg",
+        "sprites/demo-2/rad_zoom_004.jpg",
+        "sprites/demo-2/rad_zoom_005.jpg",
+        "sprites/demo-2/rad_zoom_006.jpg",
+        "sprites/demo-2/rad_zoom_007.jpg",
+        "sprites/demo-2/rad_zoom_008.jpg",
+        "sprites/demo-2/rad_zoom_009.jpg",
+        "sprites/demo-2/rad_zoom_010.jpg",
+        "sprites/demo-2/rad_zoom_011.jpg",
+        "sprites/demo-2/rad_zoom_012.jpg",
+        "sprites/demo-2/rad_zoom_013.jpg",
+        "sprites/demo-2/rad_zoom_014.jpg",
+        "sprites/demo-2/rad_zoom_015.jpg",
+        "sprites/demo-2/rad_zoom_016.jpg",
+        "sprites/demo-2/rad_zoom_017.jpg",
+        "sprites/demo-2/rad_zoom_018.jpg",
+        "sprites/demo-2/rad_zoom_019.jpg",
+        "sprites/demo-2/rad_zoom_020.jpg",
+        "sprites/demo-2/rad_zoom_021.jpg",
+        "sprites/demo-2/rad_zoom_022.jpg",
+        "sprites/demo-2/rad_zoom_023.jpg",
+        "sprites/demo-2/rad_zoom_024.jpg",
+        "sprites/demo-2/rad_zoom_025.jpg",
+        "sprites/demo-2/rad_zoom_026.jpg",
+        "sprites/demo-2/rad_zoom_027.jpg",
+        "sprites/demo-2/rad_zoom_028.jpg",
+        "sprites/demo-2/rad_zoom_029.jpg",
+        "sprites/demo-2/rad_zoom_030.jpg",
+        "sprites/demo-2/rad_zoom_031.jpg",
+        "sprites/demo-2/rad_zoom_032.jpg",
+        "sprites/demo-2/rad_zoom_033.jpg",
+        "sprites/demo-2/rad_zoom_034.jpg",
+      ]
+    });
+  });
+  </script>
+</div>   
+<script>copySource(2);</script>
 
 <h3 class="post-title"><a href="#">Demo 3</a></h3>
 <p>
@@ -66,15 +143,16 @@
   $(function(){
     $(".demo-3").spritespin({
       width     : 800,
-      height    : 300,
-      frames    : 498,
+      height    : 350,
+      frames    : 697,
       frame     : 0,
       frameStep : 3,
       animate   : true,
       loop      : true,
-      speed     : 32,
-      image     : "sprites/demo-3/lakedistrict.jpg",
-      behavior  : "interactive"
+      frameTime : 32,
+      image     : "sprites/demo-3/panorama.jpg",
+      behavior  : "drag",
+      sense     : 1.75,
     }).bind("dblclick", function(){
       $(this).spritespin("animate", "toggle");
     });
@@ -104,7 +182,7 @@
       frames : 6,
       frame  : 0,
       animate: true,
-      speed  : 1000,
+      frameTime : 1000,
       image  : [
        "sprites/demo-4/0.jpg",
        "sprites/demo-4/1.jpg",
