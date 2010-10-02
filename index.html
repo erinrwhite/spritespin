@@ -50,6 +50,10 @@
             plugin is to provide a 360 degree view of some kind of product. There is no flash 
             needed, everything is done with javascript and the jQuery framework.
           </p>
+          <p>
+            Since the Chrome Browser has problems animating large images, such as large spritesheets,
+            the plugin can also be used with an array of single images instead.
+          </p>
           
           <h3 class="post-title"><a href="#">Dependencies</a></h3>
           <p>
@@ -75,7 +79,7 @@
           
           <h3 class="post-title"><a href="#">Example</a></h3>
           <p>
-            Rotation of a bike using 34 images.
+            Rotation of a bike using 34 images. Try to drag it around.
           </p>
           <div id="example"></div>
           <script>
@@ -85,45 +89,43 @@
               height    : 327,
               frames    : 34,
               image     : [
-                "sprites/demo-1/rad_zoom_001.jpg",
-                "sprites/demo-1/rad_zoom_002.jpg",
-                "sprites/demo-1/rad_zoom_003.jpg",
-                "sprites/demo-1/rad_zoom_004.jpg",
-                "sprites/demo-1/rad_zoom_005.jpg",
-                "sprites/demo-1/rad_zoom_006.jpg",
-                "sprites/demo-1/rad_zoom_007.jpg",
-                "sprites/demo-1/rad_zoom_008.jpg",
-                "sprites/demo-1/rad_zoom_009.jpg",
-                "sprites/demo-1/rad_zoom_010.jpg",
-                "sprites/demo-1/rad_zoom_011.jpg",
-                "sprites/demo-1/rad_zoom_012.jpg",
-                "sprites/demo-1/rad_zoom_013.jpg",
-                "sprites/demo-1/rad_zoom_014.jpg",
-                "sprites/demo-1/rad_zoom_015.jpg",
-                "sprites/demo-1/rad_zoom_016.jpg",
-                "sprites/demo-1/rad_zoom_017.jpg",
-                "sprites/demo-1/rad_zoom_018.jpg",
-                "sprites/demo-1/rad_zoom_019.jpg",
-                "sprites/demo-1/rad_zoom_020.jpg",
-                "sprites/demo-1/rad_zoom_021.jpg",
-                "sprites/demo-1/rad_zoom_022.jpg",
-                "sprites/demo-1/rad_zoom_023.jpg",
-                "sprites/demo-1/rad_zoom_024.jpg",
-                "sprites/demo-1/rad_zoom_025.jpg",
-                "sprites/demo-1/rad_zoom_026.jpg",
-                "sprites/demo-1/rad_zoom_027.jpg",
-                "sprites/demo-1/rad_zoom_028.jpg",
-                "sprites/demo-1/rad_zoom_029.jpg",
-                "sprites/demo-1/rad_zoom_030.jpg",
-                "sprites/demo-1/rad_zoom_031.jpg",
-                "sprites/demo-1/rad_zoom_032.jpg",
-                "sprites/demo-1/rad_zoom_033.jpg",
-                "sprites/demo-1/rad_zoom_034.jpg",
+                "sprites/demo-2/rad_zoom_001.jpg",
+                "sprites/demo-2/rad_zoom_002.jpg",
+                "sprites/demo-2/rad_zoom_003.jpg",
+                "sprites/demo-2/rad_zoom_004.jpg",
+                "sprites/demo-2/rad_zoom_005.jpg",
+                "sprites/demo-2/rad_zoom_006.jpg",
+                "sprites/demo-2/rad_zoom_007.jpg",
+                "sprites/demo-2/rad_zoom_008.jpg",
+                "sprites/demo-2/rad_zoom_009.jpg",
+                "sprites/demo-2/rad_zoom_010.jpg",
+                "sprites/demo-2/rad_zoom_011.jpg",
+                "sprites/demo-2/rad_zoom_012.jpg",
+                "sprites/demo-2/rad_zoom_013.jpg",
+                "sprites/demo-2/rad_zoom_014.jpg",
+                "sprites/demo-2/rad_zoom_015.jpg",
+                "sprites/demo-2/rad_zoom_016.jpg",
+                "sprites/demo-2/rad_zoom_017.jpg",
+                "sprites/demo-2/rad_zoom_018.jpg",
+                "sprites/demo-2/rad_zoom_019.jpg",
+                "sprites/demo-2/rad_zoom_020.jpg",
+                "sprites/demo-2/rad_zoom_021.jpg",
+                "sprites/demo-2/rad_zoom_022.jpg",
+                "sprites/demo-2/rad_zoom_023.jpg",
+                "sprites/demo-2/rad_zoom_024.jpg",
+                "sprites/demo-2/rad_zoom_025.jpg",
+                "sprites/demo-2/rad_zoom_026.jpg",
+                "sprites/demo-2/rad_zoom_027.jpg",
+                "sprites/demo-2/rad_zoom_028.jpg",
+                "sprites/demo-2/rad_zoom_029.jpg",
+                "sprites/demo-2/rad_zoom_030.jpg",
+                "sprites/demo-2/rad_zoom_031.jpg",
+                "sprites/demo-2/rad_zoom_032.jpg",
+                "sprites/demo-2/rad_zoom_033.jpg",
+                "sprites/demo-2/rad_zoom_034.jpg",
               ],
-              behavior  : "drag",
-              sense : 10,
-              //animate   : true,
-              //loop      : true,
+              animate   : true,
+              loop      : true,
               frameTime : 60
             });
           });
