@@ -2,18 +2,26 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html;  charset=iso-8859-1" />
-  <meta name="description" content="An minimal site format" />
-  <meta name="keywords" content="blog" />
+  <title>spritespin jQuery plugin</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="language" content="english, en" />
+  <meta http-equiv="imagetoolbar" content="false" />
+  <meta name="keywords" content="360 view,360 viewer,360 panorama,panoarama,sprite animation,spritesheet,reel,javascript,jquery,jquery plugin,no flash" />
+  <meta name="description" content="jQuery plugin for 360° views." />
+  <meta name="author" content="Alexander Gräfenstein" />
+  <meta name="page-topic" content="spritespin jQuery plugin" />
+  <meta name="robots" content="index,follow" />
+  <meta name="date" content="2010-10-01" />
+  <meta name="revisit-after" content="14 days" />
+  <meta name="audience" content="javascript developers,web developers" />
+
   <link rel="stylesheet" type="text/css" href="lib/css/style.css" media="all" />  
   <link rel="stylesheet" type="text/css" href="lib/css/jquery-ui.css" media="all" />  
 
   <script type="text/javascript" src="lib/js/jquery-1.4.2.min.js" ></script>
   <script type="text/javascript" src="lib/js/jquery-ui-1.8.5.custom.min.js" ></script>
   <script type="text/javascript" src="lib/js/jquery.spritespin.js" ></script>
-  
   <script type="text/javascript">
-  
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-18791108-1']);
     _gaq.push(['_trackPageview']);
@@ -23,20 +31,7 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-  
   </script>
-  
-  <script type="text/javascript">
-    function copySource(demonumber){
-      accessor = "#demo-" + demonumber + ""
-      $("<pre class='brush:javascript box'/>").insertAfter(accessor).text($(accessor).html()).hide();
-      $("<a href='#'>Source</a>").insertAfter(accessor).bind("click", function(){
-        $(this).next().toggle();
-        return false;
-      });
-    }
-  </script>
-<title>minimal</title>
 </head>
 
 <body>
@@ -65,6 +60,17 @@
       <div id="content-wrapper">
         <div id="content">
 
+<script type="text/javascript">
+  function copySource(demonumber){
+    accessor = "#demo-" + demonumber + ""
+    $("<pre class='brush:javascript box'/>").insertAfter(accessor).text($(accessor).html()).hide();
+    $("<a href='#'>Source</a>").insertAfter(accessor).bind("click", function(){
+      $(this).next().toggle();
+      return false;
+    });
+  }
+</script>
+  
 <h3 class="post-title"><a href="#">Demo 1</a></h3>
 <p>
   Basic functionality using default options. Drag the bike to rotate.
