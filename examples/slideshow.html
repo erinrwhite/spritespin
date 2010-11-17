@@ -1,0 +1,45 @@
+<div>
+  <h3>Simple Slideshow</h3>
+<p>
+  You can use spritespin for very simple slideshows. The controls are made
+  with jquery ui.
+</p>
+<div class='spritespin'/>
+<div id="#toolbar" class="ui-widget-header ui-corner-bottom" style="width:398px;text-align:center;">
+  <button id="slide-prev">Prev</button>
+  <button id="slide-toggle">Toggle Slideshow</button>
+  <button id="slide-next">Next</button>
+</div>
+<script type="text/javascript">
+  $(function(){
+    $(".spritespin").spritespin({
+      width  : 400,
+      height : 264,
+      frames : 6,
+      frame  : 0,
+      animate: true,
+      frameTime : 1000,
+      image  : [
+       "sprites/slideshow/0.jpg",
+       "sprites/slideshow/1.jpg",
+       "sprites/slideshow/2.jpg",
+       "sprites/slideshow/3.jpg",
+       "sprites/slideshow/4.jpg",
+       "sprites/slideshow/5.jpg",
+      ],
+      behavior : "none"
+    });
+    $("#slide-next").button().click(function(){
+      var frame = $(".spritespin").spritespin("frame");
+      $(".spritespin").spritespin("frame", frame + 1);
+    });
+    $("#slide-prev").button().click(function(){
+      var frame = $(".spritespin").spritespin("frame");
+      $(".spritespin").spritespin("frame", frame - 1);
+    });
+    $("#slide-toggle").button().click(function(){
+      $(".spritespin").spritespin("animate", "toggle", true);
+    });
+  });
+</script>
+</div>

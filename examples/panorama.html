@@ -1,0 +1,25 @@
+<div>
+<p>
+  Basic functionality using default options. Drag the bike to rotate. 
+</p>
+<div class='spritespin'/>
+<script type="text/javascript">
+  $(function(){
+    $(".spritespin").spritespin({
+      width     : 700,
+      height    : 350,
+      frames    : 697,
+      frame     : 0,
+      frameStep : 3,
+      animate   : true,
+      loop      : true,
+      frameTime : 32,
+      image     : "sprites/panorama/panorama.jpg",
+      behavior  : "drag",
+      sense     : 1.75,
+    }).bind("dblclick", function(){
+      $(this).spritespin("animate", "toggle");
+    });
+  });
+</script>
+</div>
