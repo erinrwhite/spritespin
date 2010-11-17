@@ -65,40 +65,45 @@
       <div id="navigation" class="dark-gradient rt">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li class="current_page_item"><a href="howto.html">Howto</a></li>
+          <li><a href="howto.html">Howto</a></li>
           <li><a href="api.html">Api</a></li>
           <li><a href="examples.html">Examples</a></li>
-          <li><a href="tips.html">Tips</a></li>
+          <li class="current_page_item"><a href="tips.html">Tips</a></li>
         </ul>
       </div>
         
       <div id="content-wrapper">
         <div id="content">
-    
-          <h3 class="post-title"><a href="#">How to use</a></h3>
           <p>
-           In order to make SpriteSpin work you have to create a container where
-           the animation should be displayed. Here i create a <em>div</em> container and
-           give it the <em>spritespin</em> id.
-           
-           <pre class="box">&lt;div id="spritespin"/&gt;</pre>
+            Every Browser behaves different so you probably will have different
+            spritespin settings for some cases. Spritespin will only consume
+            the options you provide and will not run different code for different
+            browsers. Its up to you to find the optimal settings for your 
+            targeting browsers. Here is a collection of tips that may be helpful to accomplish this task.
           </p>
-          
+          <h4>Unstitched Images</h4>
           <p>
-            To attach the spritespin plugin to the container find it using jquery,
-            call <em>.spritespin</em> and pass some options to it.
-            <pre class="box">
-&lt;script type="text/javascript"&gt;
-  $("#spritespin").spritespin({
-    width  : 100,
-    height : 100,
-    "image : images/spritespin.jpg",
-    frames : 36,
-  });
-&lt;/script&gt;</pre>
-            In this example we use a spritesheet with 36 frames (images) where 
-            each hast the width and height of 100 pixels. So the image at "images/spritespin/jpg"
-            has a width of 36 * 100 = 3600 pixels.
+            Unstitched Images are the easiest way to get an animation
+            running. They work well on almost all desktop browsers. However
+            flickering animation could occur on some mobile devices and also in Opera. 
+            The solution is to use stitched images.
+          </p>
+          <h4>Stitched Images / Spritesheets</h4>
+          <p>
+            One way to stitch images is to put them all in a row. This is not recommended
+            since it will slow down the Chrome Browser if you use large images.
+            It's Better to pack them in a grid e.g. 36 frames in a 6x6 grid.
+            In this case you have to set the <em>framesX</em> option to <em>6</em>
+            or whatever number of frames you have per column.
+          </p>
+          <h4>iPhone limitation</h4>
+          <p>
+            If you stitch many frames together the image will probably exceed 
+            the maximum image size for iPhones. In this case the browser will 
+            scale down the image and use a low resolution copy which leads spritepsin
+            to work not correctly. To solve this you have to specify the options
+            <em>resolutionX</em> and <em>resolutionY</em> so the stitched image
+            will be displayed in that resolution even if it has been scaled down.
           </p>
         </div>
         

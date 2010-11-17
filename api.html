@@ -68,6 +68,7 @@
           <li><a href="howto.html">Howto</a></li>
           <li class="current_page_item"><a href="api.html">Api</a></li>
           <li><a href="examples.html">Examples</a></li>
+          <li><a href="tips.html">Tips</a></li>
         </ul>
       </div>
         
@@ -84,19 +85,24 @@
               </tr>   
 
         <tr class="category-head"><td colspan="3">Dimensions</td></tr>
-        <tr><td>offsetX           </td><td> 0                      </td><td> X offset where the frame image starts            </td></tr>
-        <tr><td>offsetY           </td><td> 0                      </td><td> Y offset where the frame image starts            </td></tr>
         <tr><td>width             </td><td> undefined              </td><td> Window width (or frame width)                    </td></tr>
         <tr><td>height            </td><td> undefined              </td><td> Window height (or frame height)                  </td></tr>
-        <tr><td>frameStep         </td><td> undefined              </td><td> Width of a single frame or step to the next frame</td></tr>
-        <tr><td>frames            </td><td> 36                     </td><td> Total number of frames                           </td></tr>
+        <tr><td>offsetX           </td><td> 0                      </td><td>Offset in X direction from the left image border to the first frames left border</td></tr>
+        <tr><td>offsetY           </td><td> 0                      </td><td>Offset in Y direction from the top image border to the first frames top border</td></tr>
+        <tr><td>frameStepX        </td><td> undefined              </td><td>Distance in X direction to the next frame if it differs from window width </td></tr>
+        <tr><td>frameStepY        </td><td> undefined              </td><td>Distance in Y direction to the next frame if it differs from window height</td></tr>
+        <tr><td>resolutionX       </td><td> undefined              </td><td>The spritesheet resolution in X direction </td></tr>
+        <tr><td>resolutionY       </td><td> undefined              </td><td>The spritesheet resolution in Y direction</td></tr>
+
+        <tr><td>framesX           </td><td> undefined              </td><td> Number of frames in a single row (if you user spritesheets with multiple rows)</td></tr>
+        <tr><td>frames            </td><td> 36                     </td><td> Total number of frames                           </td></tr>        
         <tr><td>frame             </td><td> 0                      </td><td> Initial frame number                             </td></tr>
         
         <tr class="category-head"><td colspan="3">Animation</td></tr>
         <tr><td>animate           </td><td> false                  </td><td> Run animation on startup                         </td></tr>
         <tr><td>loop              </td><td> false                  </td><td> Repeat animation in a loop                       </td></tr>
-        <tr><td>loopFrame         </td><td> 0                      </td><td> Indicates the loop frame. Animation will stop here when loop is false</td></tr>
-        <tr><td>frameTime             </td><td> 36                 </td><td> Time between updates                             </td></tr>
+        <tr><td>loopFrame         </td><td> 0                      </td><td> Indicates the loop frame. Animation will stop here after one iteration when the <strong>loop</strong> option is false</td></tr>
+        <tr><td>frameTime             </td><td> 36                 </td><td> Time between frame updates                             </td></tr>
         <tr><td>reverse           </td><td> false                  </td><td> If true animation is played backward             </td></tr>
         <tr><td>sense             </td><td> 1                      </td><td> Sensitivity value. Used by behavior implementation e.g. for touch sensitivity. Must be greater than  zero. </td></tr>
         
@@ -110,8 +116,8 @@
         <tr><td>preloadBackground </td><td> undefined              </td><td> Image to appear when images are preloaded         </td></tr>
         
         <tr class="category-head"><td colspan="3">Events</td></tr>
-        <tr><td>onFrame           </td><td> undefined              </td><td> Occurs on every update </td></tr>
-        <tr><td>onLoad            </td><td> undefined               </td><td> Occurs after images are loaded and spritespin has initialized</td></tr>
+        <tr><td>onFrame           </td><td> undefined              </td><td> Occurs on every frame update </td></tr>
+        <tr><td>onLoad            </td><td> undefined               </td><td> Occurs after all images are loaded and spritespin has been initialized</td></tr>
             </table>
           </p>
           
@@ -124,18 +130,21 @@
               </tr> 
               <tr>
                 <td>
+                  <strong>Signature</strong><br/>
+                  <pre class="box">.spritespin("animate", [play:boolean], [loop:boolean])</pre>
+                  <strong>Examples</strong><br/>
+                  Get a value indicating whether the animation is running or not.
                   <pre class="box">.spritespin("animate")</pre>
-                  Gets a value indicationg whether the animation is running or not.
+                  Start the animation if not running.
                   <pre class="box">.spritespin("animate", true)</pre>
-                  Starts the animation if not already running.
-                  <pre class="box">.spritespin("animate", stop)</pre>
-                  Stops the animation if not already running.
+                  Stop the animation if already running.
+                  <pre class="box">.spritespin("animate", false)</pre>
+                  Toggle the animation.
                   <pre class="box">.spritespin("animate", "toggle")</pre>
-                  Toggles the animation
+                  Start the animation if not already running and keeps it looping.
                   <pre class="box">.spritespin("animate", true, true)</pre>
-                  Starts the animation if not already running and keeps it looping.
+                  Start the animation if not already running and plays it only once.
                   <pre class="box">.spritespin("animate", true, false)</pre>
-                  Starts the animation if not already running and plays it only once.
                 </td>
               </tr>
               <tr>
@@ -143,12 +152,15 @@
               </tr> 
               <tr>
                 <td>
+                  <strong>Signature</strong><br/>
+                  <pre class="box">.spritespin("loop", [do_loop:boolean])</pre>
+                  <strong>Examples</strong><br/>
+                  Get a value indicating whether the animation is looped or not.
                   <pre class="box">.spritespin("loop")</pre>
-                  Gets a value indication whether the animation is looped.
+                  Set the loop option to true. If <em>animation</em> option is also true, the animation will be started.
                   <pre class="box">.spritespin("loop", true)</pre>
-                  Sets the loop setting to true. If animation setting is also true, the animation will be started.
+                  Set the loop option to false. Current animation will be stopped at the end of loop.
                   <pre class="box">.spritespin("loop", false)</pre>
-                  Sets the loop setting to false. Current animation will be stopped at the end.
                 </td>
               </tr>
               <tr>
@@ -156,10 +168,13 @@
               </tr> 
               <tr>
                 <td>
+                  <strong>Signature</strong><br/>
+                  <pre class="box">.spritespin("frame", [value:number])</pre>
+                  <strong>Examples</strong><br/>
+                  Get the current frame number
                   <pre class="box">.spritespin("frame")</pre>
-                  Gets the current framenumber
-                  <pre class="box">.spritespin("frame", <value>)</pre>
-                  Updates the current framenumber to the specified value.
+                  Update the current frame number to 10.
+                  <pre class="box">.spritespin("frame", 10)</pre>
                 </td>
               </tr>
             </table>

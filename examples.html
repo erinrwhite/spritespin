@@ -68,12 +68,56 @@
           <li><a href="howto.html">Howto</a></li>
           <li><a href="api.html">Api</a></li>
           <li class="current_page_item"><a href="examples.html">Examples</a></li>
+          <li><a href="tips.html">Tips</a></li>
         </ul>
       </div>
         
       <div id="content-wrapper">
         <div id="content">
+        </div>
+      </div>
+      
+      <div id="sidebar-wrapper" class="rt rb">
+        <div id="sidebar">
+          <h3>Examples</h3>
+          <ul id="sidenotes">
+            <li><a href='#' onclick="setCurrent(this); showDemo('default-unstitched'); return false;">Default</a></li>
+            <li><a href='#' onclick="setCurrent(this); showDemo('simple-stitched'); return false;">Inline spritesheet</a></li>
+            <li><a href='#' onclick="setCurrent(this); showDemo('grid-stitched'); return false;">Grid spritesheet</a></li>
+            <!--li><a href='#' onclick="setCurrent(this); showDemo('panorama'); return false;">Panorama</a></li-->
+            <li><a href='#' onclick="setCurrent(this); showDemo('slideshow'); return false;">Simple slideshow</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div id="footer" class="rb dark-gradient">
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+  function setCurrent(link){
+    $("#sidenotes a").removeClass("current");
+    $(link).addClass("current");
+  }
+  function showDemo(name){
+    $.ajax({
+      type    : "GET",
+      url     : "examples/" + name + ".html",
+      data    : {},
+      success : function(data){
+        $("#content").html($(data));
+        $("#content").append($("<pre class='brush:javascript box'/>"));
+        $("#content").find("pre").text("<div class='spritespin'></div>" + $(data).last().html());
+      }
+    });
+  }
+  $(function(){
+    $("#sidebar a").first().click();
+  });
+  </script>
 
+  <!-- 
 <script type="text/javascript">
   function copySource(demonumber){
     accessor = "#demo-" + demonumber + ""
@@ -238,15 +282,5 @@
   </script>
 </div>
 <script>copySource(4);</script>
-        
-        
-        </div>
-        
-      </div>
-      
-      <div id="footer" class="rb dark-gradient">
-      </div>
-    </div>
-  </div>
-  
+  -->
 </body>
