@@ -46,6 +46,13 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
+  <script type="text/javascript">
+    try{
+      javascript:void(document.execCommand("BackgroundImageCache",false,true));
+    } catch {
+      
+    }
+  </script>
 </head>
 
 <body>
@@ -117,170 +124,4 @@
   });
   </script>
 
-  <!-- 
-<script type="text/javascript">
-  function copySource(demonumber){
-    accessor = "#demo-" + demonumber + ""
-    $("<pre class='brush:javascript box'/>").insertAfter(accessor).text($(accessor).html()).hide();
-    $("<a href='#'>Source</a>").insertAfter(accessor).bind("click", function(){
-      $(this).next().toggle();
-      return false;
-    });
-  }
-</script>
-  
-<h3 class="post-title"><a href="#">Demo 1</a></h3>
-<p>
-  Basic functionality using default options. Drag the bike to rotate.
-</p>   
-<div id="demo-1" class="demo">
-  <div class="demo-1"></div>
-  <script>
-  $(function(){
-    $(".demo-1").spritespin({
-      width     : 640,
-      height    : 437,
-      frames    : 34,
-      image     : "sprites/demo-1/bike.jpg",
-    });
-  });
-  </script>
-</div>   
-<script>copySource(1);</script>
-
-<h3 class="post-title"><a href="#">Demo 2</a></h3>
-<p>
-  This is using an array with 34 images instead of a sprite sheet. A Slider is attached too.
-</p>   
-<div id="demo-2" class="demo">
-  <div class="demo-2 ui-widget-header ui-corner-top"></div>
-  <div id="#toolbar-2" class="ui-widget-header ui-corner-bottom" style="width:464px;text-align:center;padding:8px;">
-    <div class="demo-2-slider"></div>
-  </div>
-  
-  <script>
-  $(function(){
-    $(".demo-2").spritespin({
-      width     : 480,
-      height    : 327,
-      frames    : 34,
-      slider    : $(".demo-2-slider").slider({}),
-      image     : [
-        "sprites/demo-2/rad_zoom_001.jpg",
-        "sprites/demo-2/rad_zoom_002.jpg",
-        "sprites/demo-2/rad_zoom_003.jpg",
-        "sprites/demo-2/rad_zoom_004.jpg",
-        "sprites/demo-2/rad_zoom_005.jpg",
-        "sprites/demo-2/rad_zoom_006.jpg",
-        "sprites/demo-2/rad_zoom_007.jpg",
-        "sprites/demo-2/rad_zoom_008.jpg",
-        "sprites/demo-2/rad_zoom_009.jpg",
-        "sprites/demo-2/rad_zoom_010.jpg",
-        "sprites/demo-2/rad_zoom_011.jpg",
-        "sprites/demo-2/rad_zoom_012.jpg",
-        "sprites/demo-2/rad_zoom_013.jpg",
-        "sprites/demo-2/rad_zoom_014.jpg",
-        "sprites/demo-2/rad_zoom_015.jpg",
-        "sprites/demo-2/rad_zoom_016.jpg",
-        "sprites/demo-2/rad_zoom_017.jpg",
-        "sprites/demo-2/rad_zoom_018.jpg",
-        "sprites/demo-2/rad_zoom_019.jpg",
-        "sprites/demo-2/rad_zoom_020.jpg",
-        "sprites/demo-2/rad_zoom_021.jpg",
-        "sprites/demo-2/rad_zoom_022.jpg",
-        "sprites/demo-2/rad_zoom_023.jpg",
-        "sprites/demo-2/rad_zoom_024.jpg",
-        "sprites/demo-2/rad_zoom_025.jpg",
-        "sprites/demo-2/rad_zoom_026.jpg",
-        "sprites/demo-2/rad_zoom_027.jpg",
-        "sprites/demo-2/rad_zoom_028.jpg",
-        "sprites/demo-2/rad_zoom_029.jpg",
-        "sprites/demo-2/rad_zoom_030.jpg",
-        "sprites/demo-2/rad_zoom_031.jpg",
-        "sprites/demo-2/rad_zoom_032.jpg",
-        "sprites/demo-2/rad_zoom_033.jpg",
-        "sprites/demo-2/rad_zoom_034.jpg",
-      ]
-    });
-  });
-  </script>
-</div>   
-<script>copySource(2);</script>
-
-<h3 class="post-title"><a href="#">Demo 3</a></h3>
-<p>
-  Spritespin also plays well with panorama shots.
-</p>          
-<div id="demo-3" class="demo">
-  <div class="demo-3"></div>
-  <script>
-  $(function(){
-    $(".demo-3").spritespin({
-      width     : 800,
-      height    : 350,
-      frames    : 697,
-      frame     : 0,
-      frameStep : 3,
-      animate   : true,
-      loop      : true,
-      frameTime : 32,
-      image     : "sprites/demo-3/panorama.jpg",
-      behavior  : "drag",
-      sense     : 1.75,
-    }).bind("dblclick", function(){
-      $(this).spritespin("animate", "toggle");
-    });
-  });
-  </script>
-</div>
-<script>copySource(3);</script>
-          
-
-<h3 class="post-title"><a href="#">Demo 4</a></h3>
-<p>
-  Here spritespin is used to create a simple image viewer.
-  Pictures are taken from <a href="http://www.freedigitalphotos.net">freedigitalphotos.net</a>
-</p>
-<div id="demo-4" class="demo">            
-  <div class="demo-4"></div>
-  <div id="#toolbar-4" class="ui-widget-header ui-corner-bottom" style="width:398px;text-align:center;">
-    <button id="demo-4-prev">Prev</button>
-    <button id="demo-4-toggle">Toggle Slideshow</button>
-    <button id="demo-4-next">Next</button>
-  </div>
-  <script>
-  $(function(){
-    $(".demo-4").spritespin({
-      width  : 400,
-      height : 264,
-      frames : 6,
-      frame  : 0,
-      animate: true,
-      frameTime : 1000,
-      image  : [
-       "sprites/demo-4/0.jpg",
-       "sprites/demo-4/1.jpg",
-       "sprites/demo-4/2.jpg",
-       "sprites/demo-4/3.jpg",
-       "sprites/demo-4/4.jpg",
-       "sprites/demo-4/5.jpg",
-      ],
-      behavior : "none"
-    });
-    $("#demo-4-next").button().click(function(){
-      var frame = $(".demo-4").spritespin("frame");
-      $(".demo-4").spritespin("frame", frame + 1);
-    });
-    $("#demo-4-prev").button().click(function(){
-      var frame = $(".demo-4").spritespin("frame");
-      $(".demo-4").spritespin("frame", frame - 1);
-    });
-    $("#demo-4-toggle").button().click(function(){
-      $(".demo-4").spritespin("animate", "toggle", true);
-    });
-  });
-  </script>
-</div>
-<script>copySource(4);</script>
-  -->
 </body>
