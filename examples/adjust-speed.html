@@ -1,0 +1,44 @@
+<div>
+  <h3>Adjust Speed</h3>
+  <p>
+    
+  </p>
+  
+  <div class='spritespin'/>
+  <p>
+    <label for="frame_time">Frame Time:</label>
+    <input type="text" id="frame_time" style="border:0; color:#f6931f; font-weight:bold;" value="36ms" />
+    <label for="fps">Frames per second:</label>
+    <input type="text" id="fps" style="border:0; color:#f6931f; font-weight:bold;" value="27"/>
+  </p>
+  <div class="slider"></div>
+
+
+<script type="text/javascript">
+$(function(){
+  $(".spritespin").spritespin({
+    width     : 640,
+    height    : 437,
+    frames    : 34,
+    framesX   : 6,
+    resolutionX: 3840,
+    resolutionY: 2622,
+    image     : "sprites/bike6x6_big.jpg",
+    animate   : true,
+    loop      : true
+  });
+  $(".slider").slider({
+    range: "min",
+    value: 37,
+    min: 1,
+    max: 100,
+    slide: function( event, ui ) {
+      var newFrameTime = parseInt(ui.value);
+      $( "#frame_time" ).val( newFrameTime + "ms" );
+      $( "#fps" ).val( (1000.0 / newFrameTime)|0);
+      $(".spritespin").spritespin({ frameTime : newFrameTime });
+    }
+  });
+});
+</script>
+</div>
