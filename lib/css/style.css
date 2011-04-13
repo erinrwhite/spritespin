@@ -7,6 +7,10 @@ body
         text-align: left;
 }
 
+.preload {
+  background : url('images/ajax-loader.gif') no-repeat 50% 50%;
+}
+
 /* Links */
 
 a:link { color: #273A4D; text-decoration: none;}
