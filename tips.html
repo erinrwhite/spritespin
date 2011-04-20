@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
   <title>spritespin jQuery plugin</title>
@@ -14,116 +13,8 @@
   <meta name="date" content="2010-10-01" />
   <meta name="revisit-after" content="14 days" />
   <meta name="audience" content="javascript developers,web developers" />
-
-  <link rel="stylesheet" type="text/css" href="lib/css/style.css" media="all" />  
-  <link rel="stylesheet" type="text/css" href="lib/css/jquery-ui.css" media="all" />  
-
-  <script type="text/javascript" src="lib/js/jquery-1.4.2.min.js" ></script>
-  <script type="text/javascript" src="lib/js/jquery-ui-1.8.5.custom.min.js" ></script>
-  <script type="text/javascript" src="lib/js/jquery.spritespin.js" ></script>
-  <!-- Piwik -->
-  <script type="text/javascript">
-    var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.ginie.eu/" : "http://piwik.ginie.eu/");
-    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-    try {
-      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
-      piwikTracker.trackPageView();
-      piwikTracker.enableLinkTracking();
-    } catch( err ) {}
-  </script>
-  <noscript><p><img src="http://piwik.ginie.eu/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
-  <!-- Google -->
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-18791108-1']);
-    _gaq.push(['_trackPageview']);
-    
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+  <meta http-equiv="refresh" content="0; url=http://spritespin.ginie.eu/index.html">
 </head>
-
 <body>
-  <a href="http://github.com/giniedp/spritespin">
-    <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
-  </a>
-  
-  <div id="container">
-    <div id="header">
-      <h1>
-        <a href="http://github.com/giniedp/spritespin">sprite<span>spin</span></a>
-        <span class="small">by <a href="http://github.com/giniedp">giniedp</a></span>
-      </h1>
-    </div>
-
-    <div id="wrapper" class="rb">
-      <div id="navigation" class="dark-gradient rt">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="howto.html">Howto</a></li>
-          <li><a href="api.html">Api</a></li>
-          <li><a href="examples.html">Examples</a></li>
-          <li class="current_page_item"><a href="tips.html">Tips</a></li>
-        </ul>
-      </div>
-        
-      <div id="content-wrapper">
-        <div id="content">
-          <p>
-            Every Browser behaves different so you probably will have different
-            spritespin settings for some cases. Spritespin will only consume
-            the options you provide and will not run different code for different
-            browsers. Its up to you to find the optimal settings for your 
-            targeting browsers. Here is a collection of tips that may be helpful to accomplish this task.
-          </p>
-          <h4>Unstitched Images</h4>
-          <p>
-            Unstitched Images are the easiest way to get an animation
-            running. They work well on almost all desktop browsers. However
-            flickering animation could occur on some mobile devices and also in Opera. 
-            The solution is to use stitched images.
-          </p>
-          <h4>Stitched Images / Spritesheets</h4>
-          <p>
-            One way to stitch images is to put them all in a row. This is not recommended
-            since it will slow down the Chrome Browser if you use large images.
-            It's Better to pack them in a grid e.g. 36 frames in a 6x6 grid.
-            In this case you have to set the <em>framesX</em> option to <em>6</em>
-            or whatever number of frames you have per column.
-          </p>
-          <h4>iPhone limitation</h4>
-          <p>
-            If you stitch many frames together the image will probably exceed 
-            the maximum image size for iPhones. In this case the browser will 
-            scale down the image and use a low resolution copy which leads spritepsin
-            to work not correctly. To solve this you have to specify the options
-            <em>resolutionX</em> and <em>resolutionY</em> so the stitched image
-            will be displayed in that resolution even if it has been scaled down.
-          </p>
-        </div>
-        
-      </div>
-      
-      <div id="sidebar-wrapper" class="rt rb">
-        <div id="sidebar">
-          <h3>Download</h3>
-          <a href="http://github.com/giniedp/spritespin/zipball/master" class="download_link"><div class="zip"></div></a>
-          <a href="http://github.com/giniedp/spritespin/tarball/master" class="download_link"><div class="tar"></div></a>
-          <a href='http://pledgie.com/campaigns/13569' class="pledgie">
-            <img alt='Click here to lend your support to: spritespin and make a donation at www.pledgie.com !' 
-                 src='http://www.pledgie.com/campaigns/13569.png?skin_name=chrome' border='0' />
-          </a>
-        </div>
-      </div>
-      
-      <div id="footer" class="rb dark-gradient">
-      </div>
-    </div>
-  </div>
-
+  You are being redirected to <a href="http://spritespin.ginie.eu/examples.html">SpriteSpin</a>
 </body>
