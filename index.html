@@ -1,20 +1,57 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-  <title>spritespin jQuery plugin</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="language" content="english, en" />
-  <meta http-equiv="imagetoolbar" content="false" />
-  <meta name="keywords" content="360 view,360 viewer,360 panorama,panoarama,sprite animation,spritesheet,reel,javascript,jquery,jquery plugin,no flash" />
-  <meta name="description" content="jQuery plugin for 360° views." />
-  <meta name="author" content="Alexander Gräfenstein" />
-  <meta name="page-topic" content="spritespin jQuery plugin" />
-  <meta name="robots" content="index,follow" />
-  <meta name="date" content="2010-10-01" />
-  <meta name="revisit-after" content="14 days" />
-  <meta name="audience" content="javascript developers,web developers" />
-  <meta http-equiv="refresh" content="0; url=http://spritespin.ginie.eu/index.html">
-</head>
-<body>
-  You are being redirected to <a href="http://spritespin.ginie.eu/index.html">SpriteSpin</a>
-</body>
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>3D viewer demo</title>
+
+        <script src='https://code.jquery.com/jquery-1.11.3.min.js' type='text/javascript' /></script>
+		<script src='release/spritespin.js' type='text/javascript' /></script>
+  
+    </head>
+    <body>
+  <div id='mySpriteSpin'/>
+<script type='text/javascript'>
+$("#mySpriteSpin").spritespin({
+  // path to the source images.
+  source: [
+  "images/img01.jpg",
+  "images/img02.jpg",
+  "images/img03.jpg",
+  "images/img04.jpg",
+  "images/img05.jpg",
+  "images/img06.jpg",
+  "images/img07.jpg",
+  "images/img08.jpg",
+  "images/img09.jpg",
+  "images/img10.jpg",
+  "images/img11.jpg",
+  "images/img12.jpg",
+  "images/img13.jpg",
+  "images/img14.jpg",
+  "images/img15.jpg",
+  "images/img16.jpg",
+  "images/img17.jpg",
+  "images/img18.jpg",
+  "images/img19.jpg",
+  "images/img20.jpg", 
+  "images/img21.jpg",
+  "images/img22.jpg",
+  "images/img23.jpg",
+  "images/img24.jpg",
+  "images/img25.jpg",
+  "images/img26.jpg",
+  "images/img27.jpg",
+  "images/img28.jpg",
+  "images/img29.jpg",
+  "images/img30.jpg", 
+  ],
+  width   : 240,  // width in pixels of the window/frame
+  height  : 320,  // height in pixels of the window/frame
+  frameTime : 75,
+});
+</script>
+</div>
+
+    </body>
+</html>
